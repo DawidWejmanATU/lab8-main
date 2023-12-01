@@ -60,13 +60,13 @@ app.post('/api/book', (req,res)=>{
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
-})
+})//saying hello world
 
 app.get('/api/books', async(req, res)=>{
     
   let books = await bookModel.find({});
   res.json(books);
-})
+})//getting book
 
 app.get('/api/book/:identifier',async (req,res)=>{
   console.log(req.params.identifier);
