@@ -11,7 +11,7 @@ res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
 res.header("Access-Control-Allow-Headers",
 "Origin, X-Requested-With, Content-Type, Accept");
 next();
-});
+});//use function
 
 const bodyParser = require("body-parser");
 
@@ -28,7 +28,7 @@ main().catch(err => console.log(err));
 async function main() {
   await mongoose.connect('mongodb+srv://admin:admin@cluster0.k6cuynu.mongodb.net/?retryWrites=true&w=majority');
 
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+  // my mongo
 }
 
 const bookSchema = new mongoose.Schema({
