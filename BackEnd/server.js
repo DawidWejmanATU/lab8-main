@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = 4000
 const cors = require('cors');
-
+//local host
 
 app.use(cors());
 app.use(function(req, res, next) {
@@ -65,9 +65,6 @@ app.post('/api/book', (req,res)=>{
 
 })
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})//saying hello world
 
 app.get('/api/books', async(req, res)=>{
     
@@ -82,6 +79,13 @@ app.get('/api/book/:identifier',async (req,res)=>{
   res.send(book);
 })
 
-app.listen(port, () => {
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(__dirname+'/../build/index.html'));
+  });//sending to the file 
+
+app.listen(port, () => {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
   console.log(`Example app listening on port ${port}`)
 })
+
+
+  
